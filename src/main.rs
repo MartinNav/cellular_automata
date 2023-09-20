@@ -8,6 +8,8 @@ async fn main() {
     state_arr[66] = 1;
     state_arr[24] = 1;
     state_arr[65] =1;
+    state_arr[85] =1;
+    state_arr[105] =1;
     let mut cycle_counter: u8 = 0;
     loop {
         clear_background(WHITE);
