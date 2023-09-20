@@ -32,6 +32,9 @@ async fn main() {
         }
         cycle_counter+=1;
         //Draw
+if is_mouse_button_down(MouseButton::Left) {
+state_arr[get_muse_as_cell_index()]=1;
+}
         for i in 0..400 {
             draw_cell(i, state_arr[i])
         }
@@ -75,4 +78,14 @@ fn get_neigthbour_sum(state_arr: &[u8], indx: usize) -> u8 {
         sum += state_arr[indx + 1];
     }
     sum
+}
+///This function will find what index of array is the mouse hovering over
+fn get_muse_as_cell_index()->usize{
+   let (xf, yf) = mouse_position();
+   let (x,y)=(xf as u32, yf as u32);
+   let mut indx = (x/26)+((y/26))*20;
+   if indx >=400{
+       indx=399;
+   }
+   indx as usize
 }
