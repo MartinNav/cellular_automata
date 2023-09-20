@@ -10,6 +10,8 @@ async fn main() {
     state_arr[65] =1;
     state_arr[85] =1;
     state_arr[105] =1;
+    state_arr[104] =1;
+    state_arr[106] =1;
     let mut cycle_counter: u8 = 0;
     loop {
         clear_background(WHITE);
@@ -17,7 +19,7 @@ async fn main() {
         //Do stuff here
         if cycle_counter == 15 {
             let mut s_arr = state_arr.clone();
-            for i in 0..399{
+            for i in 0..400{
                 if get_neigthbour_sum(&state_arr, i)>=2{
                     s_arr[i] = 1;
                 }else {
