@@ -31,10 +31,13 @@ async fn main() {
             cycle_counter=0;
         }
         cycle_counter+=1;
-        //Draw
 if is_mouse_button_down(MouseButton::Left) {
 state_arr[get_muse_as_cell_index()]=1;
 }
+if is_mouse_button_down(MouseButton::Right){
+state_arr[get_muse_as_cell_index()]=0;
+}
+        //Draw
         for i in 0..400 {
             draw_cell(i, state_arr[i])
         }
