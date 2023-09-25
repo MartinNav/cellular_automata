@@ -21,11 +21,11 @@ async fn main() {
         if cycle_counter == 15 {
             let mut s_arr = state_arr.clone();
             for i in 0..400 {
-                if get_neigthbour_sum(&state_arr, i) >= 2 {
-                    s_arr[i] = 1;
-                } else {
-                    s_arr[i] = 0;
-                }
+               s_arr[i] = match get_neigthbour_sum(&state_arr, i){
+                   0|4=>0,
+                   1|2|3=>1,
+                    _=>2,
+               } 
             }
             state_arr = s_arr;
             cycle_counter = 0;
