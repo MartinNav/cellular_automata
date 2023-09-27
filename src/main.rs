@@ -22,8 +22,8 @@ async fn main() {
             let mut s_arr = state_arr.clone();
             for i in 0..400 {
                s_arr[i] = match get_neigthbour_sum(&state_arr, i){
-                   0|4=>0,
-                   1|2|3=>1,
+                   0|3=>0,
+                   1|2|4=>1,
                     _=>2,
                } 
             }
@@ -32,7 +32,7 @@ async fn main() {
         }
         cycle_counter += 1;
         if is_mouse_button_down(MouseButton::Left) {
-            state_arr[get_muse_as_cell_index()] = 1;
+            state_arr[get_muse_as_cell_index()] += 1;
         }
         if is_mouse_button_down(MouseButton::Right) {
             state_arr[get_muse_as_cell_index()] = 0;
