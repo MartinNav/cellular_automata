@@ -22,7 +22,7 @@ async fn main() {
             let mut s_arr = state_arr.clone();
             for i in 0..400 {
                s_arr[i] = match get_neigthbour_sum(&state_arr, i){
-                   0|3=>0,
+                   0|3|7=>0,
                    1|2|4=>1,
                     _=>2,
                } 
