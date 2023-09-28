@@ -59,11 +59,11 @@ fn draw_cell(index: usize, state: u8) {
         cell_color,
     );
 }
-//Todo finish this function
-//Kernel:
-// #
-//#O#
-// #
+///Will create sum of elements selected by kernel
+///Kernel:
+/// #
+///#O#
+/// #
 fn get_neigthbour_sum(state_arr: &[u8], indx: usize) -> u8 {
     let mut sum: u8 = 0;
     //col
