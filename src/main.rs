@@ -38,9 +38,8 @@ async fn main() {
             state_arr[get_muse_as_cell_index()] = 0;
         }
         //Draw
-        for i in 0..400 {
-            draw_cell(i, state_arr[i])
-        }
+        let _ =(0..400).into_iter().map(|i|{draw_cell(i, state_arr[i])}).collect::<Vec<_>>();
+
         next_frame().await
     }
 }
